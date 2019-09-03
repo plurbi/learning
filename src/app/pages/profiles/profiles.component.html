@@ -1,0 +1,12 @@
+<h1>Profiles</h1>
+<hr>
+<app-profile #logged [profile]=loggedProfile></app-profile> 
+<button (click)="logged.logFoo()">Apreta</button>
+<hr>
+  <div *ngFor="let profile of profiles">
+    <app-profile [profile]="profile"></app-profile>
+  </div>
+
+
+    
+ 
