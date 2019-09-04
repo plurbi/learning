@@ -19,5 +19,6 @@ export class ProfileComponent implements OnInit {
   }
   logFoo(){
     console.log(`Logging: ${this.getFullName()}`);
+    //https://app.pluralsight.com/player?course=angular-fundamentals&author=jim-cooper&name=angular-fundamentals-m2&clip=7
   }
 }

@@ -8,7 +8,7 @@
         <div class="card-body">
           <h5 class="card-title">{{profile.name}}</h5>
           <p class="card-text">{{profile.description}}</p>
-          <p class="card-text"><small class="text-muted">{{getFullName()}}</small></p>
+          <p class="card-text"><small class="text-muted">{{getFullName()}} <span *ngIf="profile.isAuthor"> - Autor</span></small></p>
         </div>
       </div>
     </div>
