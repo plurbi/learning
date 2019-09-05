@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
   getFullName(){
     return ` ${this.profile.surname}, ${this.profile.name}`;
   }
-  logFoo(){
+  logFullName(){
     console.log(`Logging: ${this.getFullName()}`);
     //https://app.pluralsight.com/player?course=angular-fundamentals&author=jim-cooper&name=angular-fundamentals-m2&clip=7
   }

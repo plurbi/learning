@@ -1,15 +1,20 @@
-
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src={{profile.image}} class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{profile.name}}</h5>
-          <p class="card-text">{{profile.description}}</p>
-          <p class="card-text"><small class="text-muted">{{getFullName()}} <span *ngIf="profile.isAuthor"> - Autor</span></small></p>
-        </div>
+<div [routerLink]="['/profile', profile.id]" class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src={{profile.image}} class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{profile.name}}</h5>
+        <p class="card-text">{{profile.description}}</p>
+        <p class="card-text">
+          <small class="text-muted">{{getFullName()}}
+            <span [hidden]="!profile.isAuthor"> -
+              Autor
+            </span>
+          </small>
+        </p>
       </div>
     </div>
+  </div>
 </div>

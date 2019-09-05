@@ -1,9 +1,9 @@
 <h1>Profiles</h1>
 <hr>
-<app-profile #logged [profile]=loggedProfile></app-profile> 
-<button (click)="logged.logFoo()">Apreta</button>
+<app-profile #logged [profile]=loggedProfile  (click)="trSuccess(loggedProfile)"></app-profile> 
+<button (click)="logged.logFullName()">Apreta</button>
 <hr>
-  <div *ngFor="let profile of profiles">
+  <div *ngFor="let profile of profiles" (click)="trSuccess(profile)">
     <app-profile [profile]="profile"></app-profile>
   </div>
 

@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/user/profile/profile.component';
 import { ProfilesComponent } from './pages/profiles/profiles.component';
+import { ProfileDetailComponent } from './pages/profile-detail/profile-detail.component';
+import { Error404Component } from './pages/errors/error404/error404.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    ProfilesComponent
+    ProfilesComponent,
+    ProfileDetailComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
