@@ -4,13 +4,24 @@ import { ProfilesComponent } from './pages/profiles/profiles.component';
 import { ProfileDetailComponent } from './pages/profile-detail/profile-detail.component';
 import { Error404Component } from './pages/errors/error404/error404.component';
 import { ProfileRouteActivationService } from './services/routesActiv/profile-route-activation.service';
+import { ProfilesResolver } from './pages/profiles/profiles-resolver.service';
 
 
 const routes: Routes = [
-  { path: "profile", component: ProfilesComponent },
-  { path: "profile/:id", component: ProfileDetailComponent, canActivate: [ProfileRouteActivationService] },
+  {
+    path: "profiles",
+    component: ProfilesComponent,
+    resolve: { profilesResolve: ProfilesResolver }
+  },
+  {
+    path: "profile/:id",
+    component: ProfileDetailComponent,
+    canActivate: [ProfileRouteActivationService]
+  },
+  { path: 'vehicles', loadChildren: './pages/vehicles/vehicle.module#VehicleModule'},
   { path: "404", component: Error404Component },
-  { path: "", component: ProfilesComponent }
+  { path: "", redirectTo: '/profiles', pathMatch:"full" },
+  { path: "*", redirectTo: '/404', pathMatch:"full" }
 ];
 
 @NgModule({

@@ -11,10 +11,11 @@ import { IProfile } from 'src/app/shared/models/profile.model';
 export class ProfileDetailComponent implements OnInit {
 
   constructor(
-    private profilesService: ProfilesService, 
+    private profilesService: ProfilesService,
     private route: ActivatedRoute,
     private router: Router) { }
 
+  isDirty: boolean;
   profile: IProfile;
   ngOnInit(): void {
     const id = this.route.snapshot.params["id"];

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IProfile } from '../shared/models/profile.model';
+import { Subject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,21 @@ import { IProfile } from '../shared/models/profile.model';
 export class ProfilesService {
 
   constructor() { }
+
+
+  getProfiles() {
+    let subject = new Subject();
+    setTimeout(() => {
+      subject.next(this.PROFILES);
+      subject.complete();
+    }, 100);
+    return subject;
+  }
+  getProfile(idProf: number): IProfile {
+    let prof: IProfile = this.PROFILES.filter(id => id.id == idProf)[0];
+    return prof;
+  }
+
   PROFILES: IProfile[] = [
     {
       id: 1,
@@ -36,11 +52,5 @@ export class ProfilesService {
       isAuthor: false
     }
   ]
-  getProfiles(): IProfile[] {
-    return this.PROFILES;
-  }
-  getProfile(idProf: number): IProfile {    
-    let prof:IProfile = this.PROFILES.filter(id => id.id == idProf)[0];
-    return prof;
-  }
+
 }

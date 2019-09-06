@@ -8,6 +8,7 @@ import { ProfilesComponent } from './pages/profiles/profiles.component';
 import { ProfileDetailComponent } from './pages/profile-detail/profile-detail.component';
 import { Error404Component } from './pages/errors/error404/error404.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
