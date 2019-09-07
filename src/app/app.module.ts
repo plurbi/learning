@@ -7,6 +7,7 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { ProfilesComponent } from './pages/profiles/profiles.component';
 import { ProfileDetailComponent } from './pages/profile-detail/profile-detail.component';
 import { Error404Component } from './pages/errors/error404/error404.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { Error404Component } from './pages/errors/error404/error404.component';
     ProfileComponent,
     ProfilesComponent,
     ProfileDetailComponent,
-    Error404Component
+    Error404Component,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

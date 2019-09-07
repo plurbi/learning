@@ -10,8 +10,8 @@ export class ProfilesService {
   constructor() { }
 
 
-  getProfiles() {
-    let subject = new Subject();
+  getProfiles(): Observable<IProfile[]> {
+    let subject = new Subject<IProfile[]>();
     setTimeout(() => {
       subject.next(this.PROFILES);
       subject.complete();

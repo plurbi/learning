@@ -5,7 +5,7 @@ import { ProfileDetailComponent } from './pages/profile-detail/profile-detail.co
 import { Error404Component } from './pages/errors/error404/error404.component';
 import { ProfileRouteActivationService } from './services/routesActiv/profile-route-activation.service';
 import { ProfilesResolver } from './pages/profiles/profiles-resolver.service';
-
+import { LoginComponent } from './pages/login/login.component'
 
 const routes: Routes = [
   {
@@ -18,10 +18,11 @@ const routes: Routes = [
     component: ProfileDetailComponent,
     canActivate: [ProfileRouteActivationService]
   },
-  { path: 'vehicles', loadChildren: './pages/vehicles/vehicle.module#VehicleModule'},
+  { path: 'vehicles', loadChildren: './pages/vehicles/vehicle.module#VehicleModule' },
+  { path: 'login', component: LoginComponent },
   { path: "404", component: Error404Component },
-  { path: "", redirectTo: '/profiles', pathMatch:"full" },
-  { path: "*", redirectTo: '/404', pathMatch:"full" }
+  { path: "", redirectTo: '/profiles', pathMatch: "full" },
+  { path: "*", redirectTo: '/404', pathMatch: "full" }
 ];
 
 @NgModule({

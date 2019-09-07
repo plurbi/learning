@@ -16,7 +16,7 @@ export class ProfilesComponent implements OnInit {
     public profilesService: ProfilesService,
     private route: ActivatedRoute) { }
 
-  profiles;
+  profiles: IProfile[];
   loggedProfile: IProfile;
 
   ngOnInit() {
